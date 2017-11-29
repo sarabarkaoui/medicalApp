@@ -1,0 +1,15 @@
+<ion-content class="background">
+	
+      <form [formGroup]="Form" (ngSubmit)="signUp()">
+				<ion-item>
+					<ion-input type="text" placeholder="user" [(ngModel)]="userId" formControlName="userId"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-input type="password"  [(ngModel)]="password" placeholder="Password" formControlName="password"  ></ion-input>
+				</ion-item>
+				
+				<button type="submit" ion-button block outline color="light" [disabled]="!Form.valid">Sign up</button>
+      </form>
+		
+	
+</ion-content>

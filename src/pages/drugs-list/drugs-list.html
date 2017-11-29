@@ -1,0 +1,35 @@
+<ion-header>
+ <ion-navbar transparent>
+  <ion-title>
+    Drugs List
+  </ion-title>
+  <ion-buttons end>
+    <button ion-button icon-only><ion-icon name="add"></ion-icon></button>
+  </ion-buttons>
+ </ion-navbar>
+</ion-header>
+ 
+<ion-content>
+ 
+  <ion-list no-lines>
+ 
+    <ion-item-sliding *ngFor="let drug of drugs">
+ 
+      <ion-item>
+ 
+        <h2>{{drug.drugName}}</h2>
+        <p>{{drug.description}}</p>
+ 
+      </ion-item>
+ 
+      <ion-item-options>
+        <button ion-button color="danger">
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+ 
+  </ion-list>
+ 
+</ion-content>

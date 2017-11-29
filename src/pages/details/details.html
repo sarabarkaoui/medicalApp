@@ -1,0 +1,51 @@
+<ion-header>
+ <ion-toolbar transparent>
+  <ion-title>Add Drug</ion-title>
+  <ion-buttons end>
+    <button ion-button icon-only><ion-icon name="close"></ion-icon></button>
+  </ion-buttons>
+ </ion-toolbar>
+</ion-header>
+ 
+<ion-content id="background">
+ 
+  <ion-list no-lines>
+ 
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input [(ngModel)]="name" type="text"></ion-input>
+    </ion-item>
+ 
+    <ion-item>
+      <ion-label floating>Description</ion-label>
+      <ion-textarea [(ngModel)]="description"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Start Date</ion-label>
+      <ion-datetime displayFormat="D/M/YYYY" [(ngModel)]="debutDate"></ion-datetime>
+    </ion-item>  
+    <ion-item>
+      <ion-label floating>Duration</ion-label>
+      <ion-range min="1" max="100" [(ngModel)]="duration" color="secondary">
+      <ion-label range-left>1</ion-label>
+      <ion-label range-right>100</ion-label>
+    </ion-range>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>How many times a day</ion-label>
+      <ion-range min="1" max="4" [(ngModel)]="nbrTimes" color="secondary"  (ionChange)="updateInputs()">
+      <ion-label range-left>1</ion-label>
+      <ion-label range-right>4</ion-label>
+      </ion-range>
+    </ion-item>
+    <ion-item *ngFor="let time of timesInput;let index = index;">
+      <ion-label floating>Time {{index+1}} </ion-label>
+      <ion-datetime displayFormat="HH:mm" [(ngModel)]="timesInput[index]"></ion-datetime>
+    </ion-item>
+ 
+ 
+  </ion-list>
+ 
+  <button ion-button full color="secondary" (click)="addDrug()">Save</button>
+ 
+</ion-content>

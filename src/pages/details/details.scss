@@ -1,0 +1,22 @@
+.ios, .md {
+ 
+    page-details {
+     #background {
+       background-color: #a4c639;
+     }
+    ion-label {
+      margin-left: 10px;
+    }
+ 
+    ion-item {
+      background-color: #74efc4 !important;
+    }
+ 
+    ion-input, ion-select, ion-textarea {
+      background-color: #f2f2f2;
+      padding: 5px 10px;
+    }
+ 
+  }
+ 
+}

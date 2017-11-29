@@ -1,0 +1,21 @@
+<ion-content class="background">
+	
+      <form [formGroup]="registrationForm" (ngSubmit)="showdetails()">
+			<ion-list >
+				<ion-item>
+					<ion-input type="text" placeholder="login" formControlName="userId" [(ngModel)]="userId"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-input type="password" placeholder="Password"  formControlName="password" [(ngModel)]="password" ></ion-input>
+				</ion-item>
+				<a>Forgot your login detail? <b>Get help signing in</b></a>
+				<button type="submit" ion-button block outline color="light" [disabled]="!registrationForm.valid" >Log in</button>
+				<p>OR</p>
+				<button ion-button block color="facebook">
+					<ion-icon name="logo-facebook"></ion-icon> Login with facebook
+				</button>
+			</ion-list>
+      </form>
+	<button class="bottom" ion-button clear full color="light" (click)="inscription()">Don't have an account? Sign up</button>
+</ion-content>
+
